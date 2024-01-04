@@ -1,0 +1,195 @@
+/* style.css */
+
+body {
+    font-family: cursive;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+
+h1 {
+    text-align: center;
+    margin-top: 80px;
+}
+
+nav {
+    background-color: darkturquoise;
+    /* padding: 2px; */
+    border: 1px solid blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Styles for left and right sides of navigation */
+nav .left-side {
+    flex: 1;
+}
+
+nav .right-side ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+p {
+    font-weight: bolder;
+    margin-left: 25px;
+}
+
+nav .right-side ul li {
+    margin-right: 20px;
+    font-weight: bolder;
+}
+
+nav .right-side ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+nav .right-side ul li a:hover {
+    color: #666;
+}
+
+nav .right-side ul li a.active {
+    font-weight: bold;
+}
+
+form {
+    width: 12000px;
+    height: 250px;
+    margin: 20px auto;
+    background-color: lightyellow;
+    /* border-radius: 8px; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 2px dashed blue;
+}
+
+#pdfForm {
+    width: 80%;
+    margin: 20px auto;
+    background-color: lightyellow;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.input-column {
+    margin-right: 20px;
+    margin-left: 200px;
+    padding-right: 250px;
+
+}
+
+.input-column label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.line {
+    border-left: 2px dashed blue;
+    height: 290px;
+    margin-left: 140px;
+}
+
+input[type="file"] {
+    border: 1px solid #ccc;
+    /* Add border */
+    padding: 8px;
+    /* Add padding */
+    border-radius: 5px;
+    /* Add border-radius for rounded corners */
+    /* background-colo */
+    /* Background color */
+    color: #333;
+    /* Text color */
+    width: 100%;
+    /* Adjust width */
+    box-sizing: border-box;
+    /* Include padding and border in width */
+    margin-bottom: 10px;
+    /* Add margin for spacing between inputs */
+}
+
+/* Style the file input labels */
+.input-column label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+
+
+button {
+    position: absolute;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    margin-top: 400px;
+}
+
+
+.reset {
+    margin-top: 400px;
+    margin-left: 200px;
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover {
+    opacity: 0.8;
+
+}
+
+.input-column input[type="file"] {
+    display: none;
+}
+
+.custom-button {
+    padding: 10px 30px;
+    border-radius: 25px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    margin-top: 300px;
+    font-size: 20px;
+
+}
+
+.Inputext {
+    top: 0;
+    left: 0;
+    margin-left: 400px;
+    position: absolute;
+    margin-top: 250px;
+    font-size: 22px;
+}
+
+.Inputext2 {
+    top: 0;
+    left: 0;
+    margin-left: 1010px;
+    position: absolute;
+    margin-top: 250px;
+    font-size: 22px;
+}

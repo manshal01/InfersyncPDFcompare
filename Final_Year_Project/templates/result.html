@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>nferSync TextLens: Cognitive PDF Comparison</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='result.css') }}">
+</head>
+<body>
+    <h1>
+     
+        Result is ready</h1>
+    <div id="result">
+        <div id="similarity">
+            <h2>Similarity Percentage:</h2>
+            <p>{{ similarity_percentage }}%</p>
+        </div>
+        <div id="text1">
+            <h2>Unique Content</h2>
+            <pre>{{ "%.2f" | format(100 - similarity_percentage) }}%</pre>
+        </div>
+        <div id="summary1">
+            <h2>Summary of Text from PDF1:</h2>
+            <p>{{ summary1 }}</p>
+        </div>
+        <div id="summary2">
+            <h2>Summary of Text from PDF2:</h2>
+            <p>{{ summary2 }}</p>
+        </div>
+        <div id="similar_content">
+            <h2>Similar Content:</h2>
+            {% if similar_content %}
+                <ul>
+                    {% for content in similar_content %}
+                        {{ content }}
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No similar content found.</p>
+            {% endif %}
+        </div>
+        <div id="summary_similar_content">
+            <h2>Summary of Similar Content:</h2>
+            {% if summary_similar_content %}
+                <p>{{ summary_similar_content }}</p>
+            {% else %}
+                <p>No summary available for similar content.</p>
+            {% endif %}
+        </div
+    </div>
+</body>
+</html>

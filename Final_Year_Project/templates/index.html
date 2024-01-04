@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>InferSync TextLens: Cognitive PDF Comparison</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Add this style to hide the Choose File button when a file is selected */
+        .custom-button.hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function validateFileType(fileInput) {
+            const allowedExtensions = /(\.pdf)$/i;
+            if (!allowedExtensions.exec(fileInput.value)) {
+                alert('Please select a PDF file.');
+                fileInput.value = '';
+                return false;
+            }
+            // Display selected file name
+            const fileName = fileInput.value.split('\\').pop(); // Get the file name without path
+            const button = fileInput.parentNode.querySelector('.custom-button');
+            const fileDisplay = fileInput.parentNode.querySelector('.file-name');
+            fileDisplay.textContent = fileName;
+    
+            // Check if it's the first input and adjust the margin of the line
+            if (fileInput.id === 'pdf1') {
+                const line = document.querySelector('.line');
+                if (fileName) {
+                    line.style.marginLeft = '-31px'; // Adjust margin when file is selected
+                } else {
+                    line.style.marginLeft = '140px'; // Reset margin when no file is selected
+                }
+            }
+    
+            button.classList.add('hidden'); // Hide the Choose File button
+        }
+    
+        function resetForm() {
+            document.getElementById('pdfForm').reset();
+            // Reset displayed file names and show Choose File buttons
+            const fileInputs = document.querySelectorAll('input[type="file"]');
+            fileInputs.forEach(input => {
+                input.parentNode.querySelector('.file-name').textContent = '';
+                input.parentNode.querySelector('.custom-button').classList.remove('hidden');
+            });
+    
+            // Reset the margin of the line when form is reset
+            const line = document.querySelector('.line');
+            line.style.marginLeft = '140px';
+        }
+    
+        function triggerFileInput(inputId) {
+            document.getElementById(inputId).click();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="left-side">
+                <p>InferSync</p>
+            </div>
+            <div class="right-side">
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <h1>InferSync TextLens: Cognitive PDF Comparison</h1>
+    <p></p>
+    <form method="post" action="/compare" enctype="multipart/form-data" id="pdfForm">
+        <div class="input-wrapper">
+            <div class="input-column">
+                <label for="pdf1" class="Inputext">Input 1</label>
+                <button type="button" class="custom-button" onclick="triggerFileInput('pdf1')">Choose File</button>
+                <input type="file" name="pdf1" id="pdf1" accept=".pdf" required style="display: none;" onchange="validateFileType(this)">
+                <span class="file-name"></span>
+            </div>
+            <div class="line"></div>
+            <div class="input-column">
+                <label for="pdf2" class="Inputext2">Input 2</label>
+                <button type="button" class="custom-button" onclick="triggerFileInput('pdf2')">Choose File</button>
+                <input type="file" name="pdf2" id="pdf2" accept=".pdf" required style="display: none;" onchange="validateFileType(this)">
+                <span class="file-name"></span>
+            </div>
+        </div>
+        <button type="submit">Compare PDFs</button>
+        <button type="button" onclick="resetForm()" class="reset">Reset</button>
+    </form>
+</body>
+</html>

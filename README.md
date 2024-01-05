@@ -2,6 +2,8 @@
 
 InferSync TextLens is a web application for comparing the content of two PDF files and generating summaries. This application uses Flask as the web framework, PyMuPDF for extracting text from PDF files, and sumy for text summarization.
 
+![image](https://github.com/manshal01/InfersyncPDFcompare/assets/93897590/5ed7e213-39b2-4d09-9bb8-f1f4d137d46b)
+
 ## Table of Contents
 
 - [Getting Started](#getting-started)
@@ -25,12 +27,11 @@ Install the required dependencies using the following command:
 
 ```bash
 pip install -r requirements.txt
+```
 
 Certainly! Here's the complete README.md code for your GitHub repository:
 
-markdown
-Copy code
-# InferSync TextLens: Cognitive PDF Comparison
+### InferSync TextLens: Cognitive PDF Comparison
 
 InferSync TextLens is a web application for comparing the content of two PDF files and generating summaries. This application uses Flask as the web framework, PyMuPDF for extracting text from PDF files, and sumy for text summarization.
 
@@ -57,20 +58,19 @@ Install the required dependencies using the following command:
 
 ```bash
 pip install -r requirements.txt
+```
 Installation
 Clone the repository:
-bash
-Copy code
+```bash
 git clone https://github.com/your-username/your-repository.git
 cd your-repository
-Install the dependencies:
-bash
-Copy code
-pip install -r requirements.txt
+```
+
 Run the Flask application:
-bash
-Copy code
+
+```bash
 python app.py
+```
 The application will be running at http://127.0.0.1:5000/ in your web browser.
 
 Usage
@@ -85,15 +85,26 @@ app.py: Main Flask application script.
 static/: Folder containing static files (CSS).
 templates/: Folder containing HTML templates.
 Contributing
-Contributions are welcome! If you find any issues or have improvements, feel free to open a pull request.
 
-License
+
+## Result:
+#Output:
+1.
+![image](https://github.com/manshal01/InfersyncPDFcompare/assets/93897590/26d0bd48-40f3-4de7-a1c7-09d3b3b43ae0)
+
+`
+
+2.
+![image](https://github.com/manshal01/InfersyncPDFcompare/assets/93897590/a5600052-2ac9-42e4-8d67-72e1353e3b67)
+
+##Contributions are welcome! If you find any issues or have improvements, feel free to open a pull request.
+
+##License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-javascript
-Copy code
 
-Copy and paste this code into your README.md file in your GitHub repository. Make sure to replace placeholders like `your-username` and `your-repository` with your actual GitHub username and repository name. If you have a specific license for your project, you can replace the `LICENSE` section accordingly.
+
+
 
 
 
